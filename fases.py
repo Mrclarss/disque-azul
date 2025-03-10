@@ -331,7 +331,7 @@ class Parte16(Fase):
         
 class Parte17(Fase):
     def __int__(self):
-        self.__descricao = '''texto'''
+        self.__descricao = '''Você bate na porta'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
@@ -347,7 +347,7 @@ class Parte17(Fase):
         
 class Parte18(Fase):
     def __int__(self):
-        self.__descricao = '''texto'''
+        self.__descricao = '''Você volta para o carro e'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
@@ -363,7 +363,8 @@ class Parte18(Fase):
         
 class Parte19(Fase):
     def __int__(self):
-        self.__descricao = '''texto'''
+        self.__descricao = '''Ao receber a mensagem você nota que foi de uma pessoa não salva no celular, você também percebe que tem o mesmo número da pessoa que te ligou mais cedo, mas aparece sem nome e sem descrição, como se fosse uma conta a anônima.
+Você responde a mensagem ou bloqueia?'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
