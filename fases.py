@@ -90,3 +90,481 @@ class Parte4(Fase):
     def __init__(self):
         self.__descricao = '''o endereço mencionado te leva até um covil não muito distante de onde você mora, o covil era simples por fora, tinha apenas uma porta, uma câmera e uma campainha. Você estava dentro de seu carro , com sua mochila nas costas e seu celular no bolso, o que você faz agora?'''
         self.__opcoes = ["Sair do carro","Olhar a mochila","Olhar o celular"]
+    
+    def executar(self):
+        print("Parte 4")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha =  JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte8()
+        elif escolha == 1:
+            return Parte9()
+        else:
+            return Parte10()
+        
+class Parte5(Fase):
+    def __int__(self):
+        self.__descricao = '''Você fala la no grupo: 
+VOCÊ:  Humm galera...Eu recebi uma ligação estranha
+
+uma pessoa com o perfil feminino de nome Liia fala:
+
+-- OQUÊ?!?
+
+Outra pessoa com perfil feminino de nome Maju fala:
+
+-- E o que disseram?
+
+VOCÊ: Me disseram um endereço
+endereço: rua complexadas número 7891
+
+LIIA:  É O NOSSO ENDEREÇO!!
+
+VOCÊ: será que essa pessoa que me ligou queria que eu me encontrasse com vocês?
+
+MAJU: Possível'''
+        self.__opcoes = ["Ir para o endereço","Trabalhar a distância"]
+
+    def executar(self):
+        print("Parte 5")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte13()
+        else:
+            return Parte14()
+
+class Parte6(Fase):
+    def __int__(self):
+        self.__descricao = '''Você aceita trabalhar com elas, mas ainda está um pouco desconfiado, você resolve perguntar quem são elas, não daria pra trabalhar com alguém que você nem sabe quem é.
+
+VOCÊ: Blz, eu vou ajudar vcs, mas podem ao menos se apresentar?
+
+CLARA: Vdd kksks, nem nos apresentamos, prazer me chamo Clara e eu sou graduada em perícia criminal
+
+MAJU:Somos mt mal educadas kkkkkk
+ Eu sou Maria Julianne, mas pode me  chamar de Maju mesmo, e eu sou doutora em matemática e curso perícia
+
+SARICURINHA:  Pode chamar ela de Kaju tbm
+Eu me chamo Sarah, e fiz curso de detetive
+
+LIIA: basicamente somos todas detetives ccndwnv
+Eu me chamo Marília, prazer
+
+VOCÊ: Prazer em conhecê-las, eu me chamo (Digite seu nome)
+Vocês moram aqui perto para que eu possa trabalhar com vocês?
+
+CLARA: pelo o seu DDD somos do mesmo estado, nosso endereço é esse
+endereço: rua complexadas número 7891'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 6")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte15()
+        else:
+            return Parte16()
+        
+class Parte7(Fase):
+    def __int__(self):
+        self.__descricao = '''Você realmente não quer se meter com isso, você se explica pra elas e diz que não quer participar disso e sai de novo, dessa vez elas não insistem. 
+SEU JOGO ACABOU'''
+
+    def executar(self):
+        print("Parte 7")
+        print(self.__descricao)
+
+        return None
+    
+class Parte8(Fase):
+    def __int__(self):
+        self.__descricao = '''Você sai do seu carro e vai até a porta desse covil. Um silêncio ensurdecedor  paira no ambiente, parecia que o covil estava vazio. Você se aproxima?'''
+        self.__opcoes = ["Se aproximar da porta","Permanecer no carro"]
+
+    def executar(self):
+        print("Parte 8")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte11()
+        else:
+            return Parte12()
+        
+class Parte9(Fase):
+    def __int__(self):
+        self.__descricao = '''Você abre sua mochila e lá tinha apenas suas chaves de casa, um caderno e uma caneta'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 9")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+        
+class Parte10(Fase):
+    def __int__(self):
+        self.__descricao = '''Você pega seu celular e aproveita para olhar o grupo onde as meninas estavam para avisá-las  que você rebeceu uma ligação estranha com uma voz lhe dizendo um endereço'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 10")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+        
+class Parte11(Fase):
+    def __int__(self):
+        self.__descricao = '''Você se aproxima da porta, e agora você tem duas opções: Bater na porta ou voltar pro carro'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 11")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+        
+class Parte12(Fase):
+    def __int__(self):
+        self.__descricao = '''Você permanece no carro'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 12")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+        
+class Parte13(Fase):
+    def __int__(self):
+        self.__descricao = '''Você olha seu GPS e nota que o endereço não era tão distante de onde você morava, durava em torno de uns 10 minutos para chegar lá. Assim você decidi seguir esse rumo.'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 13")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+        
+class Parte14(Fase):
+    def __int__(self):
+        self.__descricao = '''Você não confia nas integrante do grupo e prefere trabalhar com ela apenas via mensagens, importando informações, com suas habilidades tecnológicas para facilitar as procura delas.
+Apois falar para elas que não iria pro endereço você recebe uma mensagem no seu celular. Você olha a mensagem ou não?'''
+        self.__opcoes = ["sim, olho a mensagem","não, ignoro e desligo as notificações"]
+
+    def executar(self):
+        print("Parte 14")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+        
+class Parte15(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 15")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+        
+class Parte16(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 16")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+        
+class Parte17(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 17")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()     
+        
+class Parte18(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 18")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+        
+class Parte19(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 19")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte21(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 21")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte22(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 22")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte23(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 23")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte24(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 24")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte25(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 25")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte26(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 26")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte27(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 27")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte28(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 28")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte29(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 29")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte30(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 30")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte31(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 31")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+              
+class Parte32(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 32")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
