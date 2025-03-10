@@ -3,44 +3,12 @@ from util import JogoUtil
 
 print("=-"*15, "ÍNICIO DO JOGO", "-="*15)
 
-class Mochila(Fase):
-    def __init__(self):
-        self.itens = {}
-
-    def adicionar_item(self, nome, quantidade):
-        if nome in self.itens:
-            self.itens[nome] += quantidade
-        else:
-            self.itens[nome] = quantidade
-        print(f"Adicionando {quantidade}x {nome} a mochila")
-    def remover_item(self, nome, quantidade):
-        if nome in self.itens:
-            if self.itens[nome] >= quantidade:
-                self.itens[nome] -= quantidade
-                print(f"Removendo {quantidade}x {nome} da mochila")
-                if self.itens[nome] == 0:
-                    del self.itens[nome]
-            else:
-                print("Quantidade insufiente para remover")
-        else:
-            print("Item não encontrado no invetário")
-
-    def lista_itens(self):
-        if self.itens:
-            print("\n Inventário vazio")
-            for item, quanidade in self.itens.item():
-                print(f"{item}: {quanidade}")
-
-        else:
-            print("\n Inventário")
-
-
 class FaseInicial(Fase):
     def __init__(self):
         self.__descricao ='''Você acorda com seu celular lotado de notificações em um grupo com pessoas desconhecidas, quando você abre seu grupo de mensagens, há dezenas de marcações de pessoas que você nunca nem ouviu falar que estavam a te questionar quem diabos era você e por que justamente VOCÊ tinha que entrar naquele grupo. Você se pergunta o porquê de estar ali, e o que estava acontecendo; um dos membros do grupo diz que na cidade deles, cujo nome era "Kuromins" tinha um sequestrador que ultimamente anda levando muitas pessoas de lá, eles também se explicaram dizendo que todos ali são um grupo de detetives, onde cada um tem uma função, e lhe contaram que 'alguém' deu seu número a eles. Você, após ouvir o depoimento deles, recebe uma ligação estranha... O que você faz?
 
         '''
-        self.__opcoes = ["Atende o telefone", "Desliga o telefonema e  sai do grupo", ]
+        self.__opcoes = ["Atende o telefone", "Desliga o telefonema e  sai do grupo", "Olhar funções do celular" ]
 
     def executar(self):
         print("\nFase Inicial")
@@ -50,13 +18,26 @@ class FaseInicial(Fase):
 
         if escolha == 0:
             return Parte2()
-        else:
+        elif escolha == 1:
             return Parte3()
+        else:
+            print('''NOTÍCIAS DO WOLF
+                 MANCHETE: Jovem estudante do instituto federal da Cidade Kuromins é sequestrada e até agora não temos vertígios de quem cometeu essa crueldade.
+                   A família da jovem Isabela Monteiro permanece preocupada
+                  
+                  
+                  GALERIA DE FOTOS
+                  você não tem fotos registradas
+                  
+                 
+                  TELEFONE
+                  Nenhuma chamada registrada''')
+            return FaseInicial()
         
 class Parte2(Fase):
     def __init__(self):
         self.__descricao = '''Você atente o telefone e você consegue ouvir a voz do 'Fantasma', se era assim que ele preferia ser chamado. Você nota que ele, o fantasma fala isso para tentar impedir que você sofra o mesmo destino que aquelas pessoas. Tirando as vozes abafadas das pessoas você ouve o 'Fantasma' dizendo um endereço de um cidade próxima-'''
-        self.__opcoes = ["Ir para o endereço", "Mencionar no grupo"]
+        self.__opcoes = ["Ir para o endereço", "Mencionar no grupo", "Olhar o celular"]
     
     def executar(self):
         print("Parte 2")
@@ -66,8 +47,21 @@ class Parte2(Fase):
 
         if escolha == 0:
             return Parte4()
-        else:
+        elif escolha ==1:
             return Parte5()
+        else:
+            print('''NOTÍCIAS DO WOLF
+                 MANCHETE: Jovem estudante do instituto federal da Cidade Kuromins é sequestrada e até agora não temos vertígios de quem cometeu essa crueldade.
+                   A família da jovem Isabela Monteiro permanece preocupada
+                  
+                  
+                  GALERIA DE FOTOS
+                  você não tem fotos registradas
+                  
+                 
+                  TELEFONE
+                  Uma chamada registrada com o número 33 9123-333''')
+            return Parte2()
 
 
 class Parte3(Fase):
@@ -89,7 +83,7 @@ class Parte3(Fase):
 class Parte4(Fase):
     def __init__(self):
         self.__descricao = '''o endereço mencionado te leva até um covil não muito distante de onde você mora, o covil era simples por fora, tinha apenas uma porta, uma câmera e uma campainha. Você estava dentro de seu carro , com sua mochila nas costas e seu celular no bolso, o que você faz agora?'''
-        self.__opcoes = ["Sair do carro","Olhar a mochila","Olhar o celular"]
+        self.__opcoes = ["Sair do carro","Olhar o celular","Olhar a mochila"]
     
     def executar(self):
         print("Parte 4")
@@ -101,8 +95,9 @@ class Parte4(Fase):
             return Parte8()
         elif escolha == 1:
             return Parte9()
-        else:
-            return Parte10()
+        else: 
+            print('''Você abre sua mochila e lá tinha apenas suas chaves de casa, um caderno e uma caneta''')
+            return Parte4()
         
 class Parte5(Fase):
     def __int__(self):
@@ -203,7 +198,7 @@ class Parte8(Fase):
 class Parte9(Fase):
     def __int__(self):
         self.__descricao = '''Você abre sua mochila e lá tinha apenas suas chaves de casa, um caderno e uma caneta'''
-        self.__opcoes = ["a","b"]
+        self.__opcoes = ["","b"]
 
     def executar(self):
         print("Parte 9")
