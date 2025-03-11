@@ -1,4 +1,4 @@
- from base import Fase
+from base import Fase
 from util import JogoUtil
 
 print("=-"*15, "ÍNICIO DO JOGO", "-="*15)
@@ -220,7 +220,7 @@ class Parte11(Fase):
         if escolha == 0:
             return Parte17()
         else:
-            return Parte18"não é a 18"()
+            return Parte54()
         
 class Parte12(Fase):
     def __int__(self):
