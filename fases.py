@@ -1,4 +1,4 @@
-from base import Fase
+ from base import Fase
 from util import JogoUtil
 
 print("=-"*15, "ÍNICIO DO JOGO", "-="*15)
@@ -20,22 +20,17 @@ Você, após ouvir o depoimento deles, recebe uma ligação estranha... O que vo
         elif escolha == 1:
             return Parte3()
         else:
-            print('''NOTÍCIAS DO WOLF MANCHETE: Jovem estudante do instituto federal da Cidade Kuromins é sequestrada e até agora não temos vertígios de quem cometeu essa crueldade.
-                A família da jovem Isabela Monteiro permanece preocupada
-
-
-
-                GALERIA DE FOTOS você não tem fotos registradas
-
- 
-
-                TELEFONE Nenhuma chamada registrada''')
+            print('''NOTÍCIAS DO WOLF
+                 MANCHETE: Jovem estudante do instituto federal da Cidade Kuromins é sequestrada e até agora não temos vertígios de quem cometeu essa crueldade.
+                   A família da jovem Isabela Monteiro permanece preocupada
+                  
+                  ''')
             return FaseInicial()
         
 class Parte2(Fase):
     def __init__(self):
         self.__descricao = '''Você atende o telefone e ouve a voz de um tal 'Fantasma'. Você nota que ele fala isso para tentar impedir você de sofrer o mesmo destino que aquelas pessoas. Além das vozes abafadas, você ouve o 'Fantasma' dizendo o endereço de uma cidade próxima.
-            Após o ocorrido, o que você decide?'''
+Após o ocorrido, o que você decide?'''
         self.__opcoes = ["Ir para o endereço", "Mencionar no grupo", "Olhar o celular"]
     
     def executar(self):
@@ -53,13 +48,7 @@ class Parte2(Fase):
                  MANCHETE: Jovem estudante do instituto federal da Cidade Kuromins é sequestrada e até agora não temos vertígios de quem cometeu essa crueldade.
                    A família da jovem Isabela Monteiro permanece preocupada
                   
-                  
-                  GALERIA DE FOTOS
-                  você não tem fotos registradas
-                  
-                 
-                  TELEFONE
-                  Uma chamada registrada com o número 33 9123-333''')
+                  ''')
             return Parte2()
 
 
@@ -72,7 +61,7 @@ class Parte3(Fase):
         print("Parte 3")
         print(self.__descricao)
         JogoUtil.exibir_opcoes(self.__opcoes)
-        escolha =  JogoUtil.fazer_escolha(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
 
         if escolha == 0:
             return Parte6()
@@ -100,22 +89,22 @@ class Parte4(Fase):
 class Parte5(Fase):
     def __int__(self):
         self.__descricao = '''Você fala la no grupo: 
-            VOCÊ: gente...eu recebi uma ligação estranha
+VOCÊ: gente...eu recebi uma ligação estranha
 
-            uma pessoa com o perfil feminino de nome Liia fala:
-            -- OQUÊ?!?
+uma pessoa com o perfil feminino de nome Liia fala:
+-- OQUÊ?!?
 
-            Outra pessoa com perfil feminino de nome Maju fala:
-            -- E o que disseram?
+Outra pessoa com perfil feminino de nome Maju fala:
+-- E o que disseram?
 
-            VOCÊ: me disseram um endereço
-            endereço: rua complexadas número 7891
+VOCÊ: me disseram um endereço
+endereço: rua complexadas número 7891 📍
 
-            LIIA: É O NOSSO ENDEREÇO!!
+LIIA: É O NOSSO ENDEREÇO!!
 
-            VOCÊ: será que essa pessoa que me ligou queria que eu me encontrasse com vocês?
+VOCÊ: será que essa pessoa que me ligou queria que eu me encontrasse com vocês?
 
-            MAJU: Possível'''
+MAJU: Possível'''
         self.__opcoes = ["Ir para o endereço","Trabalhar a distância"]
 
     def executar(self):
@@ -133,24 +122,24 @@ class Parte6(Fase):
     def __int__(self):
         self.__descricao = '''Você aceita trabalhar com elas, mas ainda está um pouco desconfiado, você resolve perguntar quem são elas, não daria pra trabalhar com alguém que você nem sabe quem é.
 
-            VOCÊ: blz, eu vou ajudar vcs, mas podem ao menos se apresentar?
+VOCÊ: blz, eu vou ajudar vcs, mas podem ao menos se apresentar?
 
-            CLARA: Vdd kksks, nem nos apresentamos, prazer me chamo Clara e eu sou graduada em perícia criminal
+CLARA: Vdd kksks, nem nos apresentamos, prazer me chamo Clara e eu sou graduada em perícia criminal
 
-            MAJU: Somos mt mal educadas kkkkkk
-            Eu sou Maria Julianne, mas pode me chamar de Maju mesmo, e eu sou doutora em matemática e curso perícia
+MAJU: Somos mt mal educadas kkkkkk
+ Eu sou Maria Julianne, mas pode me chamar de Maju mesmo, e eu sou doutora em matemática e curso perícia
 
-            SARICURINHA: chame ela de kaju q é mais fácil
-            meu nome é sarah e eu fiz curso de detetive
+SARICURINHA: chame ela de kaju q é mais fácil
+meu nome é sarah e eu fiz curso de detetive
 
-            LIIA: Basicamente somos todas detetives idghyeashe
-            Eu me chamo Marília, prazer
+LIIA: Basicamente somos todas detetives idghyeashe
+Eu me chamo Marília, prazer
 
-            VOCÊ: Prazer em conhecê-las, eu me chamo (Digite seu nome)
-            Vocês moram aqui perto para que eu possa trabalhar com vocês?
+VOCÊ: Prazer em conhecê-las, eu me chamo (Digite seu nome)
+Vocês moram aqui perto para que eu possa trabalhar com vocês?
 
-            CLARA: pelo o seu DDD somos do mesmo estado, nosso endereço é esse
-            endereço: rua complexadas número 7891'''
+CLARA: pelo o seu DDD somos do mesmo estado, nosso endereço é esse
+endereço: rua complexadas número 7891'''
         self.__opcoes = ["Trabalhar a distância","Ir para o endereço"]
 
     def executar(self):
@@ -225,7 +214,7 @@ class Parte11(Fase):
         if escolha == 0:
             return Parte17()
         else:
-            return Parte54()
+            return Parte18"não é a 18"()
         
 class Parte12(Fase):
     def __int__(self):
@@ -256,7 +245,7 @@ class Parte13(Fase):
 class Parte14(Fase):
     def __int__(self):
         self.__descricao = '''Você não confia nas integrante do grupo e prefere trabalhar com ela apenas via mensagens, importando informações, com suas habilidades tecnológicas para facilitar a procura delas.
-            Após falar para elas que não iria pro endereço você recebe uma mensagem no seu celular. Você olha a mensagem ou não?'''
+Após falar para elas que não iria pro endereço você recebe uma mensagem no seu celular. Você olha a mensagem ou não?'''
         self.__opcoes = ["Sim, olho a mensagem","Não, ignoro e bloqueio o contato"]
 
     def executar(self):
@@ -270,7 +259,38 @@ class Parte14(Fase):
         else:
             return Parte36()
         
+class Parte15(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
 
+    def executar(self):
+        print("Parte 15")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+        
+class Parte16(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 16")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+        
 class Parte17(Fase):
     def __int__(self):
         self.__descricao = '''Você bate na porta'''
@@ -380,7 +400,7 @@ Você sente que tem alguém te observando, o  que você faz. Segue a garota ate 
 
         if escolha == 0:
             return Parte22()
-        elif escolha == 1:
+        elif == 1:
             return Parte24()
         else:
             return Parte26()
@@ -486,7 +506,7 @@ Deseja anotar em seu caderno?'''
 
         if escolha == 0:
             return Parte44()
-        elif escolha == 1:
+        elif == 1:
             return Parte30()
         else:
             return Parte31()
@@ -498,8 +518,6 @@ class Parte30(Fase):
     def executar(self):
         print("Parte 30")
         print(self.__descricao)
-        inventario = ["Caderno", "caneta", "Chaves de casa", "Notebook"]
-        print(f"Na sua mochila tem {inventario}")
 
         return Parte32()
               
@@ -508,7 +526,6 @@ class Parte31(Fase):
         self.__descricao = '''Apenas continua a conversa'''
 
     def executar(self):
-        
         print("Parte 31")
         print(self.__descricao)
 
@@ -548,8 +565,8 @@ class Parte33(Fase):
     def __int__(self):
         self.__descricao = '''Você vai para um canto mais calmo e abre seu notebook, lá você encontra algumas coisas úteis sobre o colar.
 
-            Você achou em uma notícia de 10 anos atrás, em um acidente de carro de uma jovem chamada Manoela Medeiros e que tinha uma foto dela, dando um zoom e ajeitando a foto, você consegue ver o mesmo colar no pescoço dela.
-            Sua hipótese é que a Isabela estava na cena do crime, e possivelmente pegou o colar.'''
+Você achou em uma notícia de 10 anos atrás, em um acidente de carro de uma jovem chamada Manoela Medeiros e que tinha uma foto dela, dando um zoom e ajeitando a foto, você consegue ver o mesmo colar no pescoço dela.
+Sua hipótese é que a Isabela estava na cena do crime, e possivelmente pegou o colar.'''
 
     def executar(self):
         print("Parte 33")
@@ -570,7 +587,7 @@ class Parte34(Fase):
 class Parte35(Fase):
     def __int__(self):
         self.__descricao = '''Ao receber a mensagem você nota que foi de uma pessoa não salva no celular, você também percebe que tem o mesmo número da pessoa que te ligou mais cedo, mas aparece sem nome e sem descrição, como se fosse uma conta a anônima.
-            Você responde a mensagem ou bloqueia?'''
+Você responde a mensagem ou bloqueia?'''
         self.__opcoes = ["Responde","Bloqueia"]
 
     def executar(self):
@@ -587,7 +604,7 @@ class Parte35(Fase):
 class Parte36(Fase):
     def __int__(self):
         self.__descricao = '''Após bloquear o contato, o seu celular dá uma tela preta com a seguinte mensagem: 
-            VOCÊ NÃO DEVERIA TER ME BLOQUEADO'''
+VOCÊ NÃO DEVERIA TER ME BLOQUEADO'''
         self.__opcoes = ["Desbloqueio o contato","Ignoro e deixo o contato bloqueado"]
 
     def executar(self):
@@ -608,31 +625,30 @@ class Parte37(Fase):
     def executar(self):
         print("Parte 37")
         print(self.__descricao)
-        inventario.append('foto')
 
         return Parte38()
                                       
 class Parte38(Fase):
     def __int__(self):
         self.__descricao = '''Ótimo, você desbloqueia ele  e o mesmo manda a mesma mensagem de mais cedo.
-            No chat:
+No chat:
 
-            VOCÊ: blz, o que você quer?
+VOCÊ: blz, o que você quer?
 
-            'Fantasma': Eu vou ajudar você nesse caso.
+'Fantasma': Eu vou ajudar você nesse caso.
 
-            VOCÊ: Que caso?
+VOCÊ: Que caso?
 
-            'Fantasma: O que você recebeu agora pouco
+'Fantasma: O que você recebeu agora pouco
 
-            VOCÊ: e o que faz eu confiar em você??
+VOCÊ: e o que faz eu confiar em você??
 
-            'Fantasma': Porque eu confio em você.
+'Fantasma': Porque eu confio em você.
 
-            VOCÊ: haha, ta bom então
-            quais são seus planos?
+VOCÊ: haha, ta bom então
+quais são seus planos?
 
-            'Fantasma': Boa, falou minha língua'''
+'Fantasma': Boa, falou minha língua'''
         self.__opcoes = ["Você descriptografou","Ela descriptografou"]
 
     def executar(self):
@@ -650,20 +666,20 @@ class Parte39(Fase):
     def __int__(self):
         self.__descricao = '''Indepentende de quem foi que descriptografou ambos chegaram ao mesmo resultado, tinha algo escrito assim:
 
-            " Neste território só há espaço para a alcatéia"
+" Neste território só há espaço para a alcatéia"
 
-            'Fantasma': é inútil.
+'Fantasma': é inútil.
 
-            Você: Por que? eu acho que pode ser uma grande dica
+Você: Por que? eu acho que pode ser uma grande dica
 
-            'Fantasma': Isso é brincadeira de criança
+'Fantasma': Isso é brincadeira de criança
 
-            Você: falou o cara que tem o nome de fantasma
+Você: falou o cara que tem o nome de fantasma
 
-            'Fantasma': eu tenho motivos pra isso.
-            Bom agora vou procurar mais pistas
+'Fantasma': eu tenho motivos pra isso.
+Bom agora vou procurar mais pistas
 
-            Você: vai lá, adeus!'''
+Você: vai lá, adeus!'''
         self.__opcoes = ["a","b","c"]
 
     def executar(self):
@@ -674,7 +690,7 @@ class Parte39(Fase):
 
         if escolha == 0:
             return Parte()
-        elif escolha == 1:
+        elif == 1:
             return Parte()
         else:
             return Parte()
@@ -682,7 +698,7 @@ class Parte39(Fase):
 class Parte40(Fase):
     def __int__(self):
         self.__descricao = '''Você não consegue seguir em frente com a missão, pela primeira vez em sua vida você falhou, você viu, aos poucos cada uma de suas amigas serem pegas, e no final aquela que você mais confiava era uma traidora, era e sem coração acabou com a vida de todas as outras, e você só podia olhar para isso sem poder fazer nada para impedir.
-            FIM'''
+FIM'''
 
     def executar(self):
         print("Parte 40")
@@ -694,26 +710,26 @@ class Parte41(Fase):
     def __int__(self):
         self.__descricao = '''Você: Antes de você ir embora
 
-            Fantasma: ??
+Fantasma: ??
 
-            Você: Eu estava pesquisando sobre uma pista que eu encontrei, de um colar.
+Você: Eu estava pesquisando sobre uma pista que eu encontrei, de um colar.
 
-            O que eu achei foi um acidente que aconteceu a 10 anos de uma jovem chamada Manoela Medeiros, o que eu acho mais estranho é por que isso estaria com a Isabela
+O que eu achei foi um acidente que aconteceu a 10 anos de uma jovem chamada Manoela Medeiros, o que eu acho mais estranho é por que isso estaria com a Isabela
 
-            Fantasma: wow
-            Você é bem bom nisso
+Fantasma: wow
+Você é bem bom nisso
 
-            Sobre isso, é muito estranho, mas já pensou que talvez ela estivesse lá também.
+Sobre isso, é muito estranho, mas já pensou que talvez ela estivesse lá também.
 
-            Você: eu pensei isso...
-            Mas por que ela estaria lá
+Você: eu pensei isso...
+Mas por que ela estaria lá
 
-            Fantasma: Talvez elas se conheciam ou..
+Fantasma: Talvez elas se conheciam ou..
 
-            Você: Quem cometeu esse acidente foi a Isabela
+Você: Quem cometeu esse acidente foi a Isabela
 
-            Fantasma: Mas ela tinha extamente 10 anos a 10 anos atrás, como que ela fez isso?
-            Eu vou procurar mais coisas, mas enquanto isso, mostra esse texto para as meninas'''
+Fantasma: Mas ela tinha extamente 10 anos a 10 anos atrás, como que ela fez isso?
+Eu vou procurar mais coisas, mas enquanto isso, mostra esse texto para as meninas'''
 
     def executar(self):
         print("Parte 41")
@@ -739,7 +755,7 @@ class Parte43(Fase):
         self.__descricao = ''' "Às vezes, a escuridão parece ter vida própria. É como se cada sombra estivesse esperando por um momento de fraqueza, pronta para se mover e sussurrar segredos que não deveriam ser ouvidos. Eu sempre pensei que o medo era apenas uma emoção, mas agora percebo que ele pode se tornar uma presença, algo que nos observa, nos segue. E quando a noite cai, e o silêncio se instala, é nesse vazio que as dúvidas começam a crescer. O que realmente está escondido nas sombras? E, mais importante, quem ou o que está esperando para ser descoberto?"
 
 O que isso significaria?'''
-        self.__opcoes = ["a","b"]
+        self.__opcoes = ["Analisar com as meninas","Analisar sozinho"]
 
     def executar(self):
         print("Parte 43")
@@ -748,9 +764,9 @@ O que isso significaria?'''
         escolha = JogoUtil.fazer_escolha(self.__opcoes)
 
         if escolha == 0:
-            return Parte()
+            return Parte50()
         else:
-            return Parte() 
+            return Parte51() 
                                                                                       
 class Parte44(Fase):
     def __int__(self):
@@ -800,24 +816,30 @@ Chegando lá você percebe que o vulto já tinha ido embora e tinha deixado uma 
 
 class Parte47(Fase):
     def __int__(self):
-        self.__descricao = '''texto'''
-        self.__opcoes = ["a","b"]
+        self.__descricao = '''No grupo de mensagens
+Você: Ok... eu recebi um ligação com esse endereço, agora estou dentro do meu carro porque eu acabei de ver um vulto 
+
+Clara: Oi? o nosso endereço? Você está aqui?
+
+Você: é pra ser né, vocês não moral num covil roxo?
+
+Clara: Sim... mas tu simplesmente vem sem avisar? 
+
+Você: Eu sei lá, so abre a porta logo pra eu entrar
+
+
+Ela vem e abre a porta pra você assim você entra'''
 
     def executar(self):
         print("Parte 47")
         print(self.__descricao)
-        JogoUtil.exibir_opcoes(self.__opcoes)
-        escolha = JogoUtil.fazer_escolha(self.__opcoes)
 
-        if escolha == 0:
-            return Parte()
-        else:
-            return Parte()
+        return Parte22()
 
 class Parte48(Fase):
     def __int__(self):
-        self.__descricao = '''texto'''
-        self.__opcoes = ["a","b"]
+        self.__descricao = '''Você pega a boneca, percebe que ela tem uma chave no bolso e guarda a chave  e a boneca na mochila. '''
+        self.__opcoes = ["Comenta  que está chegando no grupo","Vai direto para a casa das detetives"]
 
     def executar(self):
         print("Parte 48")
@@ -832,7 +854,25 @@ class Parte48(Fase):
 
 class Parte49(Fase):
     def __int__(self):
-        self.__descricao = '''texto'''
+        self.__descricao = '''No grupo de mensagens
+Você: /foto da boneca/ 
+Gente, essa boneca é relevante para algo?
+
+Clara: mano?? onde cê tá?
+Sarah: Cuidado com a bruxa do 71, às vezes ela coloca umas bonecas esquisitas no bairro
+
+Maju: copas... acho que já vi esse símbolo em algum canto 
+
+Você: tô aqui na esquina, se vcs quiserem investigar cmg
+
+Clara: Na esquina?? Nem avisou vei, tô indo 
+
+Sarah: cê tá com o canivete? cuidado pq ele tá enferrujado e cê pode pegar tétano
+
+Maju: LEMBREI 
+O símbolo de copas estava na manchete do primeiro desaparecimento da cidade. 
+
+Clara: GENTE, SAIAM DO CELL, VAMO PRA LÁ'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
@@ -848,11 +888,177 @@ class Parte49(Fase):
 
 class Parte50(Fase):
     def __int__(self):
-        self.__descricao = '''texto'''
+        self.__descricao = '''Você vai até as meninas e analisa com elas  o texto.
+
+Logo vocês percebem que na carta alguém está se lamenetando provavelmente sobre o sequestrador, parecia que ela estava sendo observada por ele.  E que o sequestrador ataca principalmente a noite...
+
+Sarah: Falando nisso ontem anoite eu fui pro meu quarto e tinha um simbolo estranho escrito "Tolf"
+
+Clara: Não era assim que o Lobisomen marcava as pessoas? Você fez algo de errado Sarinha?
+
+Sarah: Rapaz, todo mundo erra né
+ 
+Clara: Isso é estranho'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
         print("Parte 50")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+            
+class Parte51(Fase):
+    def __int__(self):
+        self.__descricao = '''Suas hipóteses seriam as mesma se tivessa com as meninas
+Você percebeu que na carta alguém está se lamenetando provavelmente sobre o sequestrador, parecia que ela estava sendo observada por ele.  E que o sequestrador ataca principalmente a noite...'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 51")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+            
+class Parte52(Fase):
+    def __int__(self):
+        self.__descricao = '''Ao chegar na casa, você comenta com as meninas sobre a boneca e a chave que encontrou na esquina. 
+Maju estava investigando a boneca e Sarah e Clara tentando descobrir de onde era aquela chave.
+Após algum tempo, Maju percebe que na manchete do primeiro desaparecimento na cidade tinha um "erro de impressão" com o formato do símbolo de copas. 
+Clara e Sarah percebem que aquele modelo de chave era de um alçapão antigo e que tinha um fio de pelo cinza, possivelmente de um lobo segundo Clara.'''
+
+    def executar(self):
+        print("Parte 52")
+        print(self.__descricao)
+
+        return Parte54()
+            
+class Parte53(Fase):
+    def __int__(self):
+        self.__descricao = '''No grupo de mensagens
+            Você: Ei rapaziada, peguei umas coisas na esquina de vocês e agr eu tô indo pra aí
+            espero que estejam em casa 
+
+            Clara: mano?? nem avisou vei- 
+
+            Maju: vamo vamo que hoje é dia de trabaia 
+
+            Sarah: Oxi, do nada? ajkajskjaskja Itens novos, ihuuul'''
+
+    def executar(self):
+        print("Parte 53")
+        print(self.__descricao)
+
+        return Parte52()
+            
+class Parte54(Fase):
+    def __int__(self):
+        self.__descricao = '''Vocês decidem ir para a floresta, mas para isso se preparam guardando armas, lanternas, facas, comida e um sinalizador de emergência na sua bolsa. 
+            Vocês passam o dia caminhando, até entardecer. Após muito procurar, encontram um rastro de sangue e o seguem até um alçapão. 
+            Há um cadeado antigo na porta. Você procura na sua bolsa e encontra a chave que tinha sido deixada na esquina. '''
+
+    def executar(self):
+        print("Parte 54")
+        print(self.__descricao)
+
+        return Parte55()
+                        
+class Parte55(Fase):
+    def __int__(self):
+        self.__descricao = '''Vocês entram no alçapão e se deparam com uma fantasia de lobo e um rastro de sangue que vocês seguem até as entranhas daquele local. 
+            Após andar uns 20 metros seguindo o rastro de sangue, encontram um ambiente circular, nele há um homem apenas de calção com as extremidades cheias de sangue e as pessoas desaparecidas acorrentadas nas paredes. 
+            Vendo aquilo, vocês pegam suas armas e apontam para o homem. Este vira-se para nós e fala "porra...como CARALHOS vocês me encontraram?"
+            Não importa, quem é você? O que houve? 
+            "tava com fome, então fui pegar uns jovens para saciar minha fome"
+            Sem hesitar, você vai para cima do louco e o prende no chão.
+            VOCÊ GANHOU!'''
+
+    def executar(self):
+        print("Parte 55")
+        print(self.__descricao)
+
+        return None
+                        
+class Parte56(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 56")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+                        
+class Parte57(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 57")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+                        
+class Parte58(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 58")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+                        
+class Parte59(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 59")
+        print(self.__descricao)
+        JogoUtil.exibir_opcoes(self.__opcoes)
+        escolha = JogoUtil.fazer_escolha(self.__opcoes)
+
+        if escolha == 0:
+            return Parte()
+        else:
+            return Parte()
+                                    
+class Parte60(Fase):
+    def __int__(self):
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
+
+    def executar(self):
+        print("Parte 60")
         print(self.__descricao)
         JogoUtil.exibir_opcoes(self.__opcoes)
         escolha = JogoUtil.fazer_escolha(self.__opcoes)
