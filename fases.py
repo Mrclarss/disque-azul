@@ -1,14 +1,14 @@
-from base import Fase
+ from base import Fase
 from util import JogoUtil
 
 print("=-"*15, "ÍNICIO DO JOGO", "-="*15)
 
 class FaseInicial(Fase):
     def __init__(self):
-        self.__descricao ='''Você acorda com seu celular lotado de notificações em um grupo com pessoas desconhecidas, quando você abre seu grupo de mensagens, há dezenas de marcações de pessoas que você nunca nem ouviu falar que estavam a te questionar quem diabos era você e por que justamente VOCÊ tinha que entrar naquele grupo. Você se pergunta o porquê de estar ali, e o que estava acontecendo; um dos membros do grupo diz que na cidade deles, cujo nome era "Kuromins" tinha um sequestrador que ultimamente anda levando muitas pessoas de lá, eles também se explicaram dizendo que todos ali são um grupo de detetives, onde cada um tem uma função, e lhe contaram que 'alguém' deu seu número a eles. Você, após ouvir o depoimento deles, recebe uma ligação estranha... O que você faz?
+        self.__descricao ='''texto
 
         '''
-        self.__opcoes = ["Atende o telefone", "Desliga o telefonema e  sai do grupo", "Olhar funções do celular" ]
+        self.__opcoes = ["a", "b", "c" ]
 
     def executar(self):
         print("\nFase Inicial")
@@ -17,27 +17,21 @@ class FaseInicial(Fase):
         escolha =  JogoUtil.fazer_escolha(self.__opcoes)
 
         if escolha == 0:
-            return Parte2()
+            return Parte()
         elif escolha == 1:
-            return Parte3()
+            return Parte()
         else:
             print('''NOTÍCIAS DO WOLF
                  MANCHETE: Jovem estudante do instituto federal da Cidade Kuromins é sequestrada e até agora não temos vertígios de quem cometeu essa crueldade.
                    A família da jovem Isabela Monteiro permanece preocupada
                   
-                  
-                  GALERIA DE FOTOS
-                  você não tem fotos registradas
-                  
-                 
-                  TELEFONE
-                  Nenhuma chamada registrada''')
+                  ''')
             return FaseInicial()
         
 class Parte2(Fase):
     def __init__(self):
-        self.__descricao = '''Você atente o telefone e você consegue ouvir a voz do 'Fantasma', se era assim que ele preferia ser chamado. Você nota que ele, o fantasma fala isso para tentar impedir que você sofra o mesmo destino que aquelas pessoas. Tirando as vozes abafadas das pessoas você ouve o 'Fantasma' dizendo um endereço de um cidade próxima-'''
-        self.__opcoes = ["Ir para o endereço", "Mencionar no grupo", "Olhar o celular"]
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a", "b", "c"]
     
     def executar(self):
         print("Parte 2")
@@ -46,28 +40,22 @@ class Parte2(Fase):
         escolha =  JogoUtil.fazer_escolha(self.__opcoes)
 
         if escolha == 0:
-            return Parte4()
+            return Parte()
         elif escolha ==1:
-            return Parte5()
+            return Parte()
         else:
             print('''NOTÍCIAS DO WOLF
                  MANCHETE: Jovem estudante do instituto federal da Cidade Kuromins é sequestrada e até agora não temos vertígios de quem cometeu essa crueldade.
                    A família da jovem Isabela Monteiro permanece preocupada
                   
-                  
-                  GALERIA DE FOTOS
-                  você não tem fotos registradas
-                  
-                 
-                  TELEFONE
-                  Uma chamada registrada com o número 33 9123-333''')
+                  ''')
             return Parte2()
 
 
 class Parte3(Fase):
     def __int__(self):
-        self.__descricao = '''Você digita "Mas o que diabos está acontecendo?" e sai do grupo, porém eles te colocam de novo e pedem para você dar uma chance a eles, dizendo que só você poderia ajudar eles nessa missão'''
-        self.__opcoes = ["Ajudar elas","Sair mesmo assim"]
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
 
     def executar(self):
         print("Parte 3")
@@ -76,14 +64,14 @@ class Parte3(Fase):
         escolha = JogoUtil.fazer_escolha(self.__opcoes)
 
         if escolha == 0:
-            return Parte6()
+            return Parte()
         else:
-            return Parte7()
+            return Parte()
         
 class Parte4(Fase):
     def __init__(self):
-        self.__descricao = '''o endereço mencionado te leva até um covil não muito distante de onde você mora, o covil era simples por fora, tinha apenas uma porta, uma câmera e uma campainha. Você estava dentro de seu carro , com sua mochila nas costas e seu celular no bolso, o que você faz agora?'''
-        self.__opcoes = ["Sair do carro","Olhar o celular","Olhar a mochila"]
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b","c"]
     
     def executar(self):
         print("Parte 4")
@@ -92,35 +80,17 @@ class Parte4(Fase):
         escolha =  JogoUtil.fazer_escolha(self.__opcoes)
 
         if escolha == 0:
-            return Parte8()
+            return Parte()
         elif escolha == 1:
-            return Parte9()
+            return Parte()
         else: 
-            print('''Você abre sua mochila e lá tinha apenas suas chaves de casa, um caderno e uma caneta''')
+            print('''texto''')
             return Parte4()
         
 class Parte5(Fase):
     def __int__(self):
-        self.__descricao = '''Você fala la no grupo: 
-VOCÊ:  Humm galera...Eu recebi uma ligação estranha
-
-uma pessoa com o perfil feminino de nome Liia fala:
-
--- OQUÊ?!?
-
-Outra pessoa com perfil feminino de nome Maju fala:
-
--- E o que disseram?
-
-VOCÊ: Me disseram um endereço
-endereço: rua complexadas número 7891
-
-LIIA:  É O NOSSO ENDEREÇO!!
-
-VOCÊ: será que essa pessoa que me ligou queria que eu me encontrasse com vocês?
-
-MAJU: Possível'''
-        self.__opcoes = ["Ir para o endereço","Trabalhar a distância"]
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
 
     def executar(self):
         print("Parte 5")
@@ -129,32 +99,13 @@ MAJU: Possível'''
         escolha = JogoUtil.fazer_escolha(self.__opcoes)
 
         if escolha == 0:
-            return Parte13()
+            return Parte()
         else:
-            return Parte14()
+            return Parte()
 
 class Parte6(Fase):
     def __int__(self):
-        self.__descricao = '''Você aceita trabalhar com elas, mas ainda está um pouco desconfiado, você resolve perguntar quem são elas, não daria pra trabalhar com alguém que você nem sabe quem é.
-
-VOCÊ: Blz, eu vou ajudar vcs, mas podem ao menos se apresentar?
-
-CLARA: Vdd kksks, nem nos apresentamos, prazer me chamo Clara e eu sou graduada em perícia criminal
-
-MAJU:Somos mt mal educadas kkkkkk
- Eu sou Maria Julianne, mas pode me  chamar de Maju mesmo, e eu sou doutora em matemática e curso perícia
-
-SARICURINHA:  Pode chamar ela de Kaju tbm
-Eu me chamo Sarah, e fiz curso de detetive
-
-LIIA: basicamente somos todas detetives ccndwnv
-Eu me chamo Marília, prazer
-
-VOCÊ: Prazer em conhecê-las, eu me chamo (Digite seu nome)
-Vocês moram aqui perto para que eu possa trabalhar com vocês?
-
-CLARA: pelo o seu DDD somos do mesmo estado, nosso endereço é esse
-endereço: rua complexadas número 7891'''
+        self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
@@ -164,14 +115,13 @@ endereço: rua complexadas número 7891'''
         escolha = JogoUtil.fazer_escolha(self.__opcoes)
 
         if escolha == 0:
-            return Parte15()
+            return Parte()
         else:
-            return Parte16()
+            return Parte()
         
 class Parte7(Fase):
     def __int__(self):
-        self.__descricao = '''Você realmente não quer se meter com isso, você se explica pra elas e diz que não quer participar disso e sai de novo, dessa vez elas não insistem. 
-SEU JOGO ACABOU'''
+        self.__descricao = '''texto'''
 
     def executar(self):
         print("Parte 7")
@@ -181,8 +131,8 @@ SEU JOGO ACABOU'''
     
 class Parte8(Fase):
     def __int__(self):
-        self.__descricao = '''Você sai do seu carro e vai até a porta desse covil. Um silêncio ensurdecedor  paira no ambiente, parecia que o covil estava vazio. Você se aproxima?'''
-        self.__opcoes = ["Se aproximar da porta","Permanecer no carro"]
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
 
     def executar(self):
         print("Parte 8")
@@ -191,14 +141,14 @@ class Parte8(Fase):
         escolha = JogoUtil.fazer_escolha(self.__opcoes)
 
         if escolha == 0:
-            return Parte11()
+            return Parte()
         else:
-            return Parte12()
+            return Parte()
         
 class Parte9(Fase):
     def __int__(self):
-        self.__descricao = '''Você abre sua mochila e lá tinha apenas suas chaves de casa, um caderno e uma caneta'''
-        self.__opcoes = ["","b"]
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
 
     def executar(self):
         print("Parte 9")
@@ -213,7 +163,7 @@ class Parte9(Fase):
         
 class Parte10(Fase):
     def __int__(self):
-        self.__descricao = '''Você pega seu celular e aproveita para olhar o grupo onde as meninas estavam para avisá-las  que você rebeceu uma ligação estranha com uma voz lhe dizendo um endereço'''
+        self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
@@ -229,7 +179,7 @@ class Parte10(Fase):
         
 class Parte11(Fase):
     def __int__(self):
-        self.__descricao = '''Você se aproxima da porta, e agora você tem duas opções: Bater na porta ou voltar pro carro'''
+        self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
@@ -245,7 +195,7 @@ class Parte11(Fase):
         
 class Parte12(Fase):
     def __int__(self):
-        self.__descricao = '''Você permanece no carro'''
+        self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
@@ -261,7 +211,7 @@ class Parte12(Fase):
         
 class Parte13(Fase):
     def __int__(self):
-        self.__descricao = '''Você olha seu GPS e nota que o endereço não era tão distante de onde você morava, durava em torno de uns 10 minutos para chegar lá. Assim você decidi seguir esse rumo.'''
+        self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
@@ -277,9 +227,8 @@ class Parte13(Fase):
         
 class Parte14(Fase):
     def __int__(self):
-        self.__descricao = '''Você não confia nas integrante do grupo e prefere trabalhar com ela apenas via mensagens, importando informações, com suas habilidades tecnológicas para facilitar as procura delas.
-Apois falar para elas que não iria pro endereço você recebe uma mensagem no seu celular. Você olha a mensagem ou não?'''
-        self.__opcoes = ["sim, olho a mensagem","não, ignoro e desligo as notificações"]
+        self.__descricao = '''texto'''
+        self.__opcoes = ["a","b"]
 
     def executar(self):
         print("Parte 14")
@@ -326,7 +275,7 @@ class Parte16(Fase):
         
 class Parte17(Fase):
     def __int__(self):
-        self.__descricao = '''Você bate na porta'''
+        self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
@@ -342,7 +291,7 @@ class Parte17(Fase):
         
 class Parte18(Fase):
     def __int__(self):
-        self.__descricao = '''Você volta para o carro e'''
+        self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
@@ -358,8 +307,7 @@ class Parte18(Fase):
         
 class Parte19(Fase):
     def __int__(self):
-        self.__descricao = '''Ao receber a mensagem você nota que foi de uma pessoa não salva no celular, você também percebe que tem o mesmo número da pessoa que te ligou mais cedo, mas aparece sem nome e sem descrição, como se fosse uma conta a anônima.
-Você responde a mensagem ou bloqueia?'''
+        self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
     def executar(self):
