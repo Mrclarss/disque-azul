@@ -1,6 +1,7 @@
 from base import Fase
 from util import JogoUtil
 
+
 print("=-"*15, "ÍNICIO DO JOGO", "-="*15)
 
 class FaseInicial(Fase):
@@ -59,7 +60,7 @@ class Parte2(Fase):
 
 
 class Parte3(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você digita "Mas o que diabos está acontecendo?" e sai do grupo, porém eles te colocam de novo e pedem para você dar uma chance a eles, dizendo que só você poderia ajudar eles nessa missão'''
         self.__opcoes = ["Ajudar elas","Sair mesmo assim"]
 
@@ -88,12 +89,12 @@ class Parte4(Fase):
         if escolha == 0:
             return Parte8()
         elif escolha == 1:
-            return Parte9()
+            self.adicionar_item
         else:
             return Parte10()
         
 class Parte5(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você fala la no grupo: 
             VOCÊ: gente...eu recebi uma ligação estranha
 
@@ -125,8 +126,9 @@ class Parte5(Fase):
             return Parte14()
 
 class Parte6(Fase):
-    def __int__(self):
-        self.__descricao = '''Você aceita trabalhar com elas, mas ainda está um pouco desconfiado, você resolve perguntar quem são elas, não daria pra trabalhar com alguém que você nem sabe quem é.
+    def __init__(self):
+        self.nome = input("Digite seu nome: ")
+        self.__descricao = f'''Você aceita trabalhar com elas, mas ainda está um pouco desconfiado, você resolve perguntar quem são elas, não daria pra trabalhar com alguém que você nem sabe quem é.
 
             VOCÊ: blz, eu vou ajudar vcs, mas podem ao menos se apresentar?
 
@@ -141,7 +143,7 @@ class Parte6(Fase):
             LIIA: Basicamente somos todas detetives idghyeashe
             Eu me chamo Marília, prazer
 
-            VOCÊ: Prazer em conhecê-las, eu me chamo (Digite seu nome)
+            VOCÊ: Prazer em conhecê-las, eu me chamo {self.nome}
             Vocês moram aqui perto para que eu possa trabalhar com vocês?
 
             CLARA: pelo o seu DDD somos do mesmo estado, nosso endereço é esse
@@ -160,7 +162,7 @@ class Parte6(Fase):
             return Parte4()
         
 class Parte7(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você realmente não quer se meter com isso, você se explica pra elas e diz que não quer participar disso e sai de novo, dessa vez elas não insistem.'''
 
     def executar(self):
@@ -170,7 +172,7 @@ class Parte7(Fase):
         return None
     
 class Parte8(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você sai do seu carro e vai até a porta desse covil. Um silêncio ensurdecedor paira no ambiente, parecia que o covil estava vazio. Você se aproxima?'''
         self.__opcoes = ["Se aproximar da porta","Permanecer no carro"]
 
@@ -186,7 +188,7 @@ class Parte8(Fase):
             return Parte12()
         
 class Parte9(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você abre sua mochila e lá tinha apenas suas chaves de casa, um caderno, uma caneta e um notebook'''
 
     def executar(self):
@@ -197,7 +199,7 @@ class Parte9(Fase):
 
         
 class Parte10(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você pega seu celular e aproveita para olhar o grupo onde as meninas estavam para avisá-las  que você rebeceu uma ligação estranha com uma voz lhe dizendo um endereço'''
 
     def executar(self):
@@ -207,7 +209,7 @@ class Parte10(Fase):
         return Parte5()
         
 class Parte11(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você se aproxima da porta, e agora você tem duas opções: Bater na porta ou voltar pro carro'''
         self.__opcoes = ["Bater na porta","Voltar pro carro"]
 
@@ -223,7 +225,7 @@ class Parte11(Fase):
             return Parte54()
         
 class Parte12(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você permanece no carro'''
         self.__opcoes = ["Comentar o ocorrido no grupo e permanecer no carro","Ir investigar o vulto"]
 
@@ -239,7 +241,7 @@ class Parte12(Fase):
             return Parte46()
         
 class Parte13(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você olha seu GPS e nota que o endereço não era tão distante de onde você morava, durava em torno de uns 10 minutos para chegar lá. Assim você decidi seguir esse rumo.'''
 
     def executar(self):
@@ -249,7 +251,7 @@ class Parte13(Fase):
         return Parte4()
         
 class Parte14(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você não confia nas integrante do grupo e prefere trabalhar com ela apenas via mensagens, importando informações, com suas habilidades tecnológicas para facilitar a procura delas.
             Após falar para elas que não iria pro endereço você recebe uma mensagem no seu celular. Você olha a mensagem ou não?'''
         self.__opcoes = ["Sim, olho a mensagem","Não, ignoro e bloqueio o contato"]
@@ -266,7 +268,7 @@ class Parte14(Fase):
             return Parte36()
         
 class Parte15(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
@@ -282,7 +284,7 @@ class Parte15(Fase):
             return Parte()
         
 class Parte16(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
@@ -298,7 +300,7 @@ class Parte16(Fase):
             return Parte()
         
 class Parte17(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você bate na porta'''
 
     def executar(self):
@@ -308,17 +310,17 @@ class Parte17(Fase):
         return Parte18()     
         
 class Parte18(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Escuta um barulhão de alguma coisa caindo'''
 
     def executar(self):
         print("Parte 18")
         print(self.__descricao)
 
-        return Parte18()
+        return Parte19()
         
 class Parte19(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''VOZ 1: QUE ODIO, NOSSA PROVA!!
 
             VOZ 2: Calmaa! nem quebrou muito'''
@@ -336,12 +338,13 @@ class Parte19(Fase):
             return Parte21()
 
 class Parte20(Fase):
-    def __int__(self):
-        self.__descricao = '''Você bate novamente na porta, dessa vez uma jovem de cabelos compridos te recepciona.
+    def __init__(self):
+        self.nome = input("Digite seu nome: ")
+        self.__descricao = f'''Você bate novamente na porta, dessa vez uma jovem de cabelos compridos te recepciona.
 
             Maju: Olá? quem é você?
 
-            Você: eu sou  (digite seu nome), uma pessoa me ligou me dizendo para vim para esse endereço
+            Você: eu sou  {self.nome}, uma pessoa me ligou me dizendo para vim para esse endereço
 
             Maju: estranho... me siga'''
         self.__opcoes = ["Seguir ela","Ficar ali mesmo"]
@@ -358,7 +361,7 @@ class Parte20(Fase):
             return Parte23()
 
 class Parte21(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você fica com o ouvido na porta escutando tudo
 
             VOZ 3: Ei, vocês escutaram algo??
@@ -374,7 +377,7 @@ class Parte21(Fase):
         return Parte20()
               
 class Parte22(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = ''' Você segue ela até uma salinha onde tinham mais quatro meninas com um semblante de preocupação.
             Você de primeira percebe que as garotas são detetives, pelo o quadro cheio de fotos emarcações e papeis por todos os lados, você presume isso por fazer  a mesma coisa em seu trabalho.
             Você então decide falar com elas, você fala que quer trabalhar com elas apenas ou conta que está ali pois uma voz misteriosa te ligou?'''
@@ -392,7 +395,7 @@ class Parte22(Fase):
             return Parte28()
               
 class Parte23(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Foi inútil isso, você ficar ai parado não vai adiantar nada.
             OPS...
             Você sente que tem alguém te observando, o  que você faz. Segue a garota ate dentro de casa ou vai até onde você acha que tem alguma pessoa ou você so fica parado ali?'''
@@ -412,7 +415,7 @@ class Parte23(Fase):
             return Parte26()
               
 class Parte24(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você foi até a pessoa?
             Lamento em te informar, mas naquele arbusto algo terrível te esperava, ele era poderoso, tinha consigo um machado de lenhador, ao mesmo momento em que você se aproxima ele crava o machado em você mas... por quê?'''
 
@@ -423,7 +426,7 @@ class Parte24(Fase):
         return Parte25()
               
 class Parte25(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Parece que não foi so você que que recebeu uma mensagem de um tal de 'Fantasma', o famoso Lobisomem já sabia que você viria para aqui, era tudo esquematiza. Agora você morre na dúvida se deveria mesmo ter confiado no tal 'Fantasma' ou se ele queria te ajudar e alguma das meninas do grupo teria descorberto que você viria mais cedo ou mais tarde. Mas enfim, você não tem mais tempo de pensar, agora é só esperar o seu destino.
             VOCÊ MORREU! '''
 
@@ -434,7 +437,7 @@ class Parte25(Fase):
         return None
               
 class Parte26(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Sério? Você não vai ficar salvo ai, sai logo! RÁPIDO! Antes que...
 
             Você não teve nem tempo de raciocinar, só nota que um machado de longe bem no meio do seu rosto, você já não tem mais esperança... Mas espera aí, você ainda está respirando, você sente alguém te puxando, mas pra onde? Quem está te puxando?
@@ -448,7 +451,7 @@ class Parte26(Fase):
         return None
               
 class Parte27(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Talvez elas pudessem ajudar em alguma coisa, mas se você prefere trabalhar sozinho, vamos prosseguir'''
 
     def executar(self):
@@ -458,7 +461,7 @@ class Parte27(Fase):
         return Parte29()
               
 class Parte28(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Elas perguntaram qual era o número que te ligou falando isso, você quer olhar seu celular para ter certeza?'''
         self.__opcoes = ["Olhar o celular","Não dizer o número de telefone"]
 
@@ -474,7 +477,7 @@ class Parte28(Fase):
             return Parte45()
               
 class Parte29(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Sarah: Trabalhar com a gente?
 
             Maju: esquisito...
@@ -518,7 +521,7 @@ class Parte29(Fase):
             return Parte31()
               
 class Parte30(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você abre seu inventario e pega  seu caderninho de anotações'''
 
     def executar(self):
@@ -530,7 +533,7 @@ class Parte30(Fase):
         return Parte32()
               
 class Parte31(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Apenas continua a conversa'''
 
     def executar(self):
@@ -540,7 +543,7 @@ class Parte31(Fase):
         return Parte32()
               
 class Parte32(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Liia: ontem anoite eu fui conversar  com um amigo meu que também era amigo de uma das vítimas e ele disse que a última vez que ele viu  a Isabela foi em uma festa, ela estava bem bebadâ, e deu isso aqui pra ele.
 
             ( ela mostra um colar com a incial M)
@@ -570,7 +573,7 @@ class Parte32(Fase):
         return Parte33()
               
 class Parte33(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você vai para um canto mais calmo e abre seu notebook, lá você encontra algumas coisas úteis sobre o colar.
 
             Você achou em uma notícia de 10 anos atrás, em um acidente de carro de uma jovem chamada Manoela Medeiros e que tinha uma foto dela, dando um zoom e ajeitando a foto, você consegue ver o mesmo colar no pescoço dela.
@@ -583,7 +586,7 @@ class Parte33(Fase):
         return Parte34()
                           
 class Parte34(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você recebe uma mensagem anônima'''
 
     def executar(self):
@@ -593,7 +596,7 @@ class Parte34(Fase):
         return Parte14()
                           
 class Parte35(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Ao receber a mensagem você nota que foi de uma pessoa não salva no celular, você também percebe que tem o mesmo número da pessoa que te ligou mais cedo, mas aparece sem nome e sem descrição, como se fosse uma conta a anônima.
             Você responde a mensagem ou bloqueia?'''
         self.__opcoes = ["Responde","Bloqueia"]
@@ -610,7 +613,7 @@ class Parte35(Fase):
             return Parte36()
                           
 class Parte36(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Após bloquear o contato, o seu celular dá uma tela preta com a seguinte mensagem: 
             VOCÊ NÃO DEVERIA TER ME BLOQUEADO'''
         self.__opcoes = ["Desbloqueio o contato","Ignoro e deixo o contato bloqueado"]
@@ -627,18 +630,18 @@ class Parte36(Fase):
             return Parte40()
                                       
 class Parte37(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''De supresa ele já afirma para confiar nele e te mostra uma foto, uma foto que parecia ser uma carta, mas estava toda criptugrafadas'''
 
     def executar(self):
         print("Parte 37")
         print(self.__descricao)
-        inventario.append('foto')
+        
 
         return Parte38()
                                       
 class Parte38(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Ótimo, você desbloqueia ele  e o mesmo manda a mesma mensagem de mais cedo.
             No chat:
 
@@ -672,7 +675,7 @@ class Parte38(Fase):
             return Parte39()
                                              
 class Parte39(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Indepentende de quem foi que descriptografou ambos chegaram ao mesmo resultado, tinha algo escrito assim:
 
             " Neste território só há espaço para a alcatéia"
@@ -705,7 +708,7 @@ class Parte39(Fase):
             return Parte()
                                                   
 class Parte40(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você não consegue seguir em frente com a missão, pela primeira vez em sua vida você falhou, você viu, aos poucos cada uma de suas amigas serem pegas, e no final aquela que você mais confiava era uma traidora, era e sem coração acabou com a vida de todas as outras, e você só podia olhar para isso sem poder fazer nada para impedir.
             FIM'''
 
@@ -716,7 +719,7 @@ class Parte40(Fase):
         return None 
                                                               
 class Parte41(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você: Antes de você ir embora
 
             Fantasma: ??
@@ -747,7 +750,7 @@ class Parte41(Fase):
         return Parte43() 
                                                                           
 class Parte42(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''O fantasma te manda mensagem denovo
 
             Fantasma:
@@ -760,7 +763,7 @@ class Parte42(Fase):
         return Parte43() 
                                                                                       
 class Parte43(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = ''' "Às vezes, a escuridão parece ter vida própria. É como se cada sombra estivesse esperando por um momento de fraqueza, pronta para se mover e sussurrar segredos que não deveriam ser ouvidos. Eu sempre pensei que o medo era apenas uma emoção, mas agora percebo que ele pode se tornar uma presença, algo que nos observa, nos segue. E quando a noite cai, e o silêncio se instala, é nesse vazio que as dúvidas começam a crescer. O que realmente está escondido nas sombras? E, mais importante, quem ou o que está esperando para ser descoberto?"
 
             O que isso significaria?'''
@@ -778,7 +781,7 @@ class Parte43(Fase):
             return Parte51() 
                                                                                       
 class Parte44(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você dá a ideia de ir logo para a floresta e ir enfrentar o LOBO, as meninas não topam então você vai sozinho para a floresta e lá você encontra o ele, com um machado nas mãos. O maníaco agora não terá piedade, enquanto você corre ele joga o machado em você acertando suas costas e te rasgando ao meio.
             Esse foi seu final trágico'''
 
@@ -789,7 +792,7 @@ class Parte44(Fase):
         return None 
                                                                                       
 class Parte45(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você: Não vou dizer o número
 
             Sarah: É, ai tu te vira sozinho então, a gente tenta te ajudar, se esse número for o Lobo espero que ele te encontre e te coma vivo, sem noção'''
@@ -807,7 +810,7 @@ class Parte45(Fase):
             return Parte() 
             
 class Parte46(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você esconde as coisas importantes dentro do carro, pega o celular, um canivete que estava no porta luvas e a mochila, fecha as portas e vai até a esquina.
             Chegando lá você percebe que o vulto já tinha ido embora e tinha deixado uma boneca de pano da rainha de copas.'''
         self.__opcoes = ["Mandar foto no grupo","Você pega a boneca"]
@@ -824,7 +827,7 @@ class Parte46(Fase):
             return Parte48()
 
 class Parte47(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''No grupo de mensagens
             Você: Ok... eu recebi um ligação com esse endereço, agora estou dentro do meu carro porque eu acabei de ver um vulto 
 
@@ -846,7 +849,7 @@ class Parte47(Fase):
         return Parte22()
 
 class Parte48(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você pega a boneca, percebe que ela tem uma chave no bolso e guarda a chave  e a boneca na mochila. '''
         self.__opcoes = ["Comenta  que está chegando no grupo","Vai direto para a casa das detetives"]
 
@@ -862,7 +865,7 @@ class Parte48(Fase):
             return Parte()
 
 class Parte49(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''No grupo de mensagens
             Você: /foto da boneca/ 
             Gente, essa boneca é relevante para algo?
@@ -896,7 +899,7 @@ class Parte49(Fase):
             return Parte()
 
 class Parte50(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Você vai até as meninas e analisa com elas  o texto.
 
             Logo vocês percebem que na carta alguém está se lamenetando provavelmente sobre o sequestrador, parecia que ela estava sendo observada por ele.  E que o sequestrador ataca principalmente a noite...
@@ -922,7 +925,7 @@ class Parte50(Fase):
             return Parte()
             
 class Parte51(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Suas hipóteses seriam as mesma se tivessa com as meninas
             Você percebeu que na carta alguém está se lamenetando provavelmente sobre o sequestrador, parecia que ela estava sendo observada por ele.  E que o sequestrador ataca principalmente a noite...'''
         self.__opcoes = ["a","b"]
@@ -939,7 +942,7 @@ class Parte51(Fase):
             return Parte()
             
 class Parte52(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Ao chegar na casa, você comenta com as meninas sobre a boneca e a chave que encontrou na esquina. 
             Maju estava investigando a boneca e Sarah e Clara tentando descobrir de onde era aquela chave.
             Após algum tempo, Maju percebe que na manchete do primeiro desaparecimento na cidade tinha um "erro de impressão" com o formato do símbolo de copas. 
@@ -952,7 +955,7 @@ class Parte52(Fase):
         return Parte54()
             
 class Parte53(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''No grupo de mensagens
             Você: Ei rapaziada, peguei umas coisas na esquina de vocês e agr eu tô indo pra aí
             espero que estejam em casa 
@@ -970,7 +973,7 @@ class Parte53(Fase):
         return Parte52()
             
 class Parte54(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Vocês decidem ir para a floresta, mas para isso se preparam guardando armas, lanternas, facas, comida e um sinalizador de emergência na sua bolsa. 
             Vocês passam o dia caminhando, até entardecer. Após muito procurar, encontram um rastro de sangue e o seguem até um alçapão. 
             Há um cadeado antigo na porta. Você procura na sua bolsa e encontra a chave que tinha sido deixada na esquina. '''
@@ -982,7 +985,7 @@ class Parte54(Fase):
         return Parte55()
                         
 class Parte55(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''Vocês entram no alçapão e se deparam com uma fantasia de lobo e um rastro de sangue que vocês seguem até as entranhas daquele local. 
             Após andar uns 20 metros seguindo o rastro de sangue, encontram um ambiente circular, nele há um homem apenas de calção com as extremidades cheias de sangue e as pessoas desaparecidas acorrentadas nas paredes. 
             Vendo aquilo, vocês pegam suas armas e apontam para o homem. Este vira-se para nós e fala "porra...como CARALHOS vocês me encontraram?"
@@ -998,7 +1001,7 @@ class Parte55(Fase):
         return None
                         
 class Parte56(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
@@ -1014,7 +1017,7 @@ class Parte56(Fase):
             return Parte()
                         
 class Parte57(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
@@ -1030,7 +1033,7 @@ class Parte57(Fase):
             return Parte()
                         
 class Parte58(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
@@ -1046,7 +1049,7 @@ class Parte58(Fase):
             return Parte()
                         
 class Parte59(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
@@ -1062,7 +1065,7 @@ class Parte59(Fase):
             return Parte()
                                     
 class Parte60(Fase):
-    def __int__(self):
+    def __init__(self):
         self.__descricao = '''texto'''
         self.__opcoes = ["a","b"]
 
